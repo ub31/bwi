@@ -1,0 +1,20 @@
+- git:
+    local-name: bwi
+    uri: git@github.com:utexas-bwi/bwi.git
+    version: indigo
+- git:
+    local-name: bwi_common
+    uri: git@github.com:utexas-bwi/bwi_common.git
+    version: indigo
+- git:
+    local-name: segbot
+    uri: git@github.com:utexas-bwi/segbot.git
+    version: indigo
+- git:
+    local-name: segway_rmp
+    uri: git@github.com:utexas-bwi/segway_rmp.git
+    version: piyushk/remove_zero_odom_values
+- git:
+    local-name: segway_v3
+    uri: git@github.com:utexas-bwi/segway_v3.git
+    version: master

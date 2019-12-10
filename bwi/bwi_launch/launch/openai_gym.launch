@@ -1,0 +1,26 @@
+<launch>
+
+  <!-- start the simulation environment -->
+  
+  <arg name="use_sim_time" default="true" />
+  <arg name="gui" default="true" />
+  <arg name="world" default="gazebo" />
+  <arg name="debug" default="false" />
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find bwi_segbot_hallway)/worlds/hallwayworld.world"/> 
+    <arg name="paused" value="true"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="recording" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <node name="multi_robot_launcher" pkg="bwi_launch" type="multi_robot_launcher">
+    <rosparam command="load" param="configuration" file="$(find bwi_segbot_hallway)/config/simulation.yaml" />
+  </node>
+
+  <node name="go_marvin" pkg="bwi_segbot_hallway" type="go_marvin.py" output="screen">
+  </node>
+
+</launch>
